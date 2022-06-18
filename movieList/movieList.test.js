@@ -70,7 +70,7 @@ describe('Displays correct notification for watched, added back, and removed', (
 
     test('Removed notification', async() => {
         //click on the x button for the movie, and check that the message sent to aside is correct
-        await driver.findElement(By.xpath('//*[text()="x"]')).click();
+        await driver.findElement(By.xpath('//button[text()="x"]')).click();
 
         let messageWrapper = await driver.findElement(By.css('aside'));
         let message = await messageWrapper.getAttribute('textContent');
