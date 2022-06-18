@@ -38,7 +38,7 @@ describe('Cross off and remove movie', () => {
         await driver.sleep(100);
 
     
-        //Check to see if both movies can be removed one li element exists (from previous test)
+        //Check to see if both movies can be removed (one li element exists from previous test)
         let numListItems;
         await driver.findElements(By.xpath('//li')).then(elements => numListItems = elements.length);
         expect(numListItems).toBe(0);
