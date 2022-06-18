@@ -15,7 +15,7 @@ afterAll(async () => {
 describe('Cross off and remove movie', () => {
     test('Movies can be crossed off', async () => {
         //Add a movie to the list
-        let addMovieBar = await driver.findElement(By.css('input'));
+        let addMovieBar = await driver.findElement(By.xpath('//input[@placeholder="Add Movie"]'));
         await addMovieBar.sendKeys('Star Wars Episode IV: A New Hope\n');
     
         //Click on the movie so that it is crossed off
@@ -28,7 +28,7 @@ describe('Cross off and remove movie', () => {
     
     test('Movies can be removed', async () => {
         //Add a movie to the list
-        let addMovieBar = await driver.findElement(By.css('input'));
+        let addMovieBar = await driver.findElement(By.xpath('//input[@placeholder="Add Movie"]'));
         await addMovieBar.sendKeys('Rocky Balboa\n');
 
     
@@ -50,7 +50,7 @@ describe('Cross off and remove movie', () => {
 describe('Displays correct notification for watched, added back, and removed', () => {
     test('Watched notification', async () => {
         //Add a movie to the list
-        await driver.findElement(By.css('input')).sendKeys('-12345\n');
+        await driver.findElement(By.xpath('//input[@placeholder="Add Movie"]')).sendKeys('-12345\n');
         let messageWrapper = await driver.findElement(By.css('aside'));
 
         //click on the movie to cross it off, and check that the text sent to aside element is correct
