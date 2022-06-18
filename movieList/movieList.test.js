@@ -33,7 +33,7 @@ describe('Cross off and remove movie', () => {
 
     
         //Click on the x to remove the movie
-        let xBtn = await driver.findElements(By.xpath('//*[text()="x"]'));
+        let xBtn = await driver.findElements(By.xpath('//button[text()="x"]'));
         await xBtn.forEach(elem => elem.click());
         await driver.sleep(100);
 
